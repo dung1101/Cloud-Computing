@@ -1,2 +1,3 @@
-# 1.[Tổng quan Cloud Computing](./docs/1.Cloud-computing.md)
-# 2.[Ảo hóa là gì ?]
+**Mục lục**
+## 1.[Tổng quan](./docs/1-Overview.md)
+## 2.[Các thành phần và cấu trúc của OpenStack]((./docs/2-Cau_truc.md))
