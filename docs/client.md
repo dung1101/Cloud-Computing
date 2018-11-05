@@ -9,8 +9,20 @@ auth = v3.Password(auth_url="http://192.168.40.146:5000/v3",username="admin",pas
 sess = session.Session(auth=auth)
 keystone = client.Client(session=sess)
 ```
+## token (lưu trong memcached)
+```
+# lấy token
+token = sess.get_token(auth)
 
-# Thao tác với user thông qua user admin
+# token data
+keystone.tokens.get_token_data(token)
+```
+## tạo nova_client bằng token
+```
+nova = cli_nova.Client(2, 'admin', token_id, project_id=project_id.id, project_domain_id= project_domain_id.id, auth_url='http://192.168.40.146:5000/v3', auth_token=token_id)
+```
+
+## Thao tác với user thông qua user admin
 ```
 # lấy danh sách user list(domain, group, default_project, project) 
 keystone.users.list()
@@ -29,11 +41,14 @@ keystone.users.update(user=user, name='dungabc')
 user = keystone.users.find(name='dungabc')
 keystone.users.delete(user)
 ```
+
 # tạo project
+```
 project = keystone.projects.find(name='test')
 keystone.projects.create()
-
+```
 # tạo roles
+```
 keystone.roles.create()
 ```
 
