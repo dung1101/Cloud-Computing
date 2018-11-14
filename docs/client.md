@@ -19,7 +19,7 @@ keystone.tokens.get_token_data(token)
 ```
 ## tạo nova_client bằng token
 ```
-nova = cli_nova.Client(2, 'admin', token_id, project_id=project_id.id, project_domain_id= project_domain_id.id, auth_url='http://192.168.40.146:5000/v3', auth_token=token_id)
+cli_nova.Client(2, auth_url='http://192.168.40.146:5000/v3', auth_token=token, project_name='admin', project_domain_id='default')
 ```
 
 ## Thao tác với user thông qua user admin
