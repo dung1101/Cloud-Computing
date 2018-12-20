@@ -52,3 +52,20 @@ keystone.projects.create()
 keystone.roles.create()
 ```
 
+## get log server
+`nova.servers.get_console_output(server, lines)`
+
+## get action 
+`nova.instance_action.list(server)`
+
+## change status volume
+`cin.volumes.reset_state(volume=vol, state='available')`
+
+## attach volume 
+`nova.volumes.create_server_volume(ser.id, vol2.id)`
+
+## detach volume 
+`nova.volumes.delete_server_volume(ser.id, vol2.id)`
+
+## extend volume
+`cin.volumes.reset_state(volume=vol, size=10)`
