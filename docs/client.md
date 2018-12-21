@@ -68,4 +68,4 @@ keystone.roles.create()
 `nova.volumes.delete_server_volume(ser.id, vol2.id)`
 
 ## extend volume
-`cin.volumes.reset_state(volume=vol, size=10)`
+`cin.volumes.extend(volume=vol, new_size=10)`
